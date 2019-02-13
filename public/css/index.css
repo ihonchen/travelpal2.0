@@ -1,8 +1,21 @@
 .dates {
-	align-self: center;
+	margin: auto;
+  	width: 50%;
 }
 
 .drop3 {
 	width: 10%;
 	height: auto;
+}
+
+.login {
+	padding: 25%;
+}
+
+#loginb {
+	background-image: url("https://images.unsplash.com/photo-1505860125062-3ce932953cf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80");
+}
+
+.planadd {
+	padding :10%;
 }

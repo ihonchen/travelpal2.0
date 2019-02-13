@@ -13,11 +13,11 @@
 
   <!-- beginning of homepage code -->
   <body>
-	<div class="container-fluid">
-		<H1 align=center>TravelPal</H1>
-
-		<!-- settings button-->
-		<button type="button" class="btn settings" data-toggle="modal" data-target="#myModal"><input type="image" src="https://www.shareicon.net/data/2015/08/19/87756_gear_512x512.png" width="50" height="50" alt="settings"></button>
+  	<div>
+  		<nav class="navbar navbar-light bg-light">
+  	  <img src="images/tt.png">
+      <span class="navbar-brand mb-0 h1 mx-auto">Travel Pal</span>
+      <button type="button" class="btn settings" data-toggle="modal" data-target="#myModal"><input type="image" src="https://www.shareicon.net/data/2015/08/19/87756_gear_512x512.png" width="16" height="16" alt="settings"></button>
 		<div class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">
 	  			<div class="modal-content">
@@ -40,12 +40,23 @@
 				</div>
 			</div>
 		</div>
-		<!-- /settings button-->
 
-		<hr class="topbox" style="border: 1px solid black"/>
+    </nav>
+  	</div>
+		
+
+	<div>
+		<ul class="list-group">
+		  <li class="list-group-item">China 2 day</li>
+		  <li class="list-group-item">Texas Spring break</li>
+		  <li class="list-group-item">NYC Winter Vacation</li>
+		  <li class="list-group-item">LA daytrip</li>
+		  <li class="list-group-item">Mexico weekend 1/2</li>
+		</ul>
+	</div>
 	
 		<!-- add button-->
-		<button type="button" class="btn add" data-toggle="modal" data-target="#myModal2"><input type="image" src="images/add.png" width="50" height="50" align=right></button>
+		<button type="button" class="btn fixed-bottom add float-right" data-toggle="modal" data-target="#myModal2"><input type="image" src="images/add.png" width="50" height="50" align=right></button>
 		<div class="modal fade" id="myModal2" role="dialog">
 			<div class="modal-dialog">
 	  			<div class="modal-content">
@@ -65,7 +76,7 @@
 		  					<br>
 		  					<br>
 		  					<input type="button" value="Join" >
-		  						<input type="text" placeholder="5 digit code"></input>
+		  						<input type="text" placeholder="enter link"></input>
 		  						<!-- TODO code to send it to a given itinerary-->
 		  					</input>
 						</center>
@@ -76,8 +87,7 @@
 		<!--/add button-->
 
 		<!-- Itineraries in the background -->
-		<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="TODO" width="300">Trip to China</button>
-		<!-- /Itineraires in the background -->
+		
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
