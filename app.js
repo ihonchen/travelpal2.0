@@ -7,9 +7,13 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
-
+var login = require('./routes/')
 var index = require('./routes/index');
-var homepage = require('./routes/homepage(C)');
+var homepage = require('./routes/homepage')
+var planadd = require('./routes/planadd')
+//var homepage = require('./routes/homepage(C)');
+//var planadd = require('./routes/planadd');
+//var login = require('./routes/login')
 // Example route
 // var user = require('./routes/user');
 
@@ -35,7 +39,19 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', homepage.view);
+app.get('/', function(req, res){
+	res.render('login');
+});
+app.get('/homepage', function(req, res){
+	res.render('homepage');
+});
+
+app.get('/planadd', function(req, res){
+	res.render('planadd')
+});
+
+//app.get('/', planadd.view);
+
 // Example route
 // app.get('/users', user.list);
 
