@@ -9,7 +9,7 @@
 }
 
 .login {
-	padding: 25%;
+	padding: 10%;
 }
 
 #loginb {
@@ -18,4 +18,17 @@
 
 .planadd {
 	padding :10%;
+}
+
+#logo {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-top: 15%;
+  opacity: .75;
+}
+
+.loginButton {
+	float: right;
 }

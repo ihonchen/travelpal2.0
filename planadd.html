@@ -11,17 +11,19 @@
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
-      <img src="back.png">
+      <span onclick="goBack()">
+        <img src="back.png">
+      </span>
       <span class="navbar-brand mb-0 h1 mx-auto">Travel Pal</span>
         </div>
 
     </nav>
   <div class="form-group container planadd">
     <label for="exampleFormControlInput1">Name</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1">
+    <input type="planName" class="form-control" id="exampleFormControlInput1">
 
     <label>Start Date</label>
-    <input id="datepicker" width="276" />
+    <input type="planDate1" id="datepicker" width="276" />
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
@@ -29,20 +31,25 @@
     </script>
 
     <label>End Date</label>
-    <input id="datepicker2" width="276" />
+    <input type="planDate2" id="datepicker2" width="276" />
     <script>
         $('#datepicker2').datepicker({
             uiLibrary: 'bootstrap4'
          });
     </script>
 
-    <br>
+    
     <label for="exampleFormControlTextarea1">Description</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     <br>
+    <a href="index.html">
     <button type="button" class="btn btn-primary float-right">Done</button>
+    </a>    
   </div>
 
-  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+    <script src="routes/index.js" ="text/javascript"></script>
 </body>
 </html>

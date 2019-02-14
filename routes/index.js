@@ -2,7 +2,17 @@
 /*
  * GET home page.
  */
+console.log('sdsdfsdf')
 
-exports.view = function(req, res){
-  res.render('homepage(C)');
-};
+$("#loginB").onclick = function () {
+	console.log('sdfasdfsdsdfasdfsf')
+}
+
+
+function goBack() {
+	window.history.back();
+}
+
+function goHome() {
+	console.log('sdfsdf')
+}
