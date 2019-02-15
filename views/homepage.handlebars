@@ -35,28 +35,26 @@
 		  					<br>
 		  					<br>
 		  
-		  					<input type="button" value="Logout" onclick="alert('logging out')" onclick="window.location.href = 'planadd';"></input> <!-- TODO code to actually logout -->
+		  					<input type="button" value="Logout" onclick="alert('logging out')" onclick="window.location.href = 'planadd';"></input>
 						</center>
 					</div>
 				</div>
 			</div>
 		</div>
-
     </nav>
   	</div>
 		
-
+  	<!-- list of itineraries -->
 	<div>
 		<div class="container">
 			<ul class="list-group">
-		  		<li class="list-group-item" onclick="window.location.href = 'planz';">China 2 days (example)</li>
-		  		<p>hellotest</p>
-		  		<ul class="itineraries_list">
-		 			{{#each itineraries}}
+		  		<li class="list-group-item" onclick="window.location.href = 'planz';">China 2 days</li>
+		  		{{#each itineraries}}
+		  			<ul class="itineraries">
 		 			<div class="row"></div>
-      	 			<p>{{this}}</p>
-    	 			{{/each}}
-    	  		</ul>
+      	 			<p>{{title}}</p>
+    	 			</ul>
+    	  		{{/each}}
 			</ul>
 		</div>
 	</div>
@@ -76,12 +74,10 @@
 		  			<div class="modal-body">
 		  				<center>
 		  						<button type="button" class="btn btn-primary Create" data-toggle="modal" data-target="#myModal" onclick="window.location.href = 'planadd';">Create</button>
-		  						<!-- TODO code to create an itinerary and add to homepage -->
 		  					<br>
 		  					<br>
 		  					<input type="button" value="Join" >
 		  						<input type="text" placeholder="enter link"></input>
-		  						<!-- TODO code to send it to a given itinerary-->
 		  					</input>
 						</center>
 					</div>
@@ -89,9 +85,6 @@
 			</div>
 		</div>
 		<!--/add button-->
-
-		<!-- Itineraries in the background -->
-		
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
