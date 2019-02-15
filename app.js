@@ -6,9 +6,8 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
-var login = require('./routes/')
-var index = require('./routes/index');
+var handlebars = require('express3-handlebars');
+var login = require('./routes/login');
 var homepage = require('./routes/homepage')
 var planadd = require('./routes/planadd')
 //var homepage = require('./routes/homepage(C)');
@@ -54,7 +53,6 @@ app.get('/planadd', function(req, res){
 
 // Example route
 // app.get('/users', user.list);
-
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
