@@ -8,8 +8,9 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
 var login = require('./routes/login');
-var homepage = require('./routes/homepage')
-var planadd = require('./routes/planadd')
+var homepage = require('./routes/homepage');
+var planadd = require('./routes/planadd');
+var planz = require('./routes/planz');
 //var homepage = require('./routes/homepage(C)');
 //var planadd = require('./routes/planadd');
 //var login = require('./routes/login')
@@ -37,6 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+
+app.get('/planz', function(req, res){
+	res.render('planz')
+});
 
 app.get('/', function(req, res){
 	res.render('login');
