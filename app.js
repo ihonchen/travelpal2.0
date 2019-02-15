@@ -46,9 +46,7 @@ app.get('/planz', function(req, res){
 app.get('/', function(req, res){
 	res.render('login');
 });
-app.get('/homepage', function(req, res){
-	res.render('homepage');
-});
+app.get('/homepage', homepage.view);
 
 app.get('/planadd', function(req, res){
 	res.render('planadd')
