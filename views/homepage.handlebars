@@ -47,14 +47,18 @@
 		
 
 	<div>
-		<ul class="list-group">
-		  <li class="list-group-item" onclick="window.location.href = 'planz';">China 2 days (example)</li>
-		 {{#each itineraries}}
-      	 <div>
-      	 	 <li>{{title}}</li>
-      	 </div>
-    	 {{/each}}
-		</ul>
+		<div class="container">
+			<ul class="list-group">
+		  		<li class="list-group-item" onclick="window.location.href = 'planz';">China 2 days (example)</li>
+		  		<p>hellotest</p>
+		  		<ul class="itineraries_list">
+		 			{{#each itineraries}}
+		 			<div class="row"></div>
+      	 			<p>{{this}}</p>
+    	 			{{/each}}
+    	  		</ul>
+			</ul>
+		</div>
 	</div>
 	
 		<!-- add button-->
