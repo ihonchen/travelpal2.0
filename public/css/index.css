@@ -1,6 +1,10 @@
 .dates {
-	margin: auto;
-  	width: 50%;
+	position: absolute;
+	left: 50%;
+}
+
+.belowDates {
+	padding-top: 15px;
 }
 
 .drop3 {
@@ -31,4 +35,29 @@
 
 .loginButton {
 	float: right;
+}
+
+.times p {
+	margin-top: 20px;
+}
+
+.arrow {
+	width: 15px;
+	height: 15px;
+	margin-top: 5px;
+}
+
+#checkout {
+	position: relative;
+	margin-top: 65%;
+}
+
+.addButton {
+right: 0;
+bottom: 0;
+position: absolute;
+}
+
+#firstTime {
+	margin-top: 10px;
 }

@@ -8,7 +8,7 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<title>Homepage(C)</title>
+	<title>Homepage</title>
   </head>
 
   <!-- beginning of homepage code -->
@@ -16,7 +16,7 @@
   	<div>
   		<nav class="navbar navbar-light bg-light">
   	  <img src="images/tt.png">
-      <span class="navbar-brand mb-0 h1 mx-auto">Travel Pal</span>
+      <span class="navbar-brand mb-0 h1 mx-auto">Your Itineraries</span>
       <button type="button" class="btn settings" data-toggle="modal" data-target="#myModal"><input type="image" src="https://www.shareicon.net/data/2015/08/19/87756_gear_512x512.png" width="16" height="16" alt="settings"></button>
 		<div class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">
@@ -44,9 +44,6 @@
 		</div>
     </nav>
   	</div>
-		
-	<h2 style="text-align: center;">Your Itineraries</h1>
-
   	<!-- list of itineraries -->
 	<div>
 		<ul class="list-group">	  		
@@ -54,7 +51,7 @@
 	 			<li class="list-group-item" onclick="window.location.href = 'planz';">
 	  				<ul class="itineraries">
       					<p style="text-align: left;">{{title}}</p>
-   	 					<p style="text-align: right;">{{startdate}} - {{enddate}}</p>
+   	 					<p style="text-align: right;">{{numdays}} day(s)</p>
    	 				</ul>   	  
     	  		</li>		
     	  	{{/each}}
@@ -62,7 +59,10 @@
 	</div>
 	
 		<!-- add itinerary button-->
-		<button type="button" class="btn fixed-bottom" data-toggle="modal" data-target="#myModal2"><input type="image" class="add" src="images/add.png" width="50" height="50"></button>
+		
+			<button type="button" class="btn addButton" data-toggle="modal" data-target="#myModal2"><input type="image" src="images/add.png" width="50" height="50"></button>
+		
+		
 		<div class="modal fade" id="myModal2" role="dialog">
 			<div class="modal-dialog">
 	  			<div class="modal-content">
@@ -80,9 +80,9 @@
 		  					<br>
 
 		  					<!-- Join an existing itinerary-->
-		  					<input type="button" value="Join" >
-		  						<input type="text" placeholder="enter link"></input>
-		  					</input>
+		  					<input type="text" placeholder="enter link code"></input>
+
+		  					<input type="button" class="btn btn-primary" value="Join" onclick="window.location.href = 'planz'"></input>
 						</center>
 					</div>
 	  			</div>

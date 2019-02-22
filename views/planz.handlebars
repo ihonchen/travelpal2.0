@@ -7,32 +7,24 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Hello, world!</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light container-fluid">
 
         <img src="images/back.png" onclick="window.location.href = 'homepage';">
 
-      <span class="navbar-brand mb-0 h1 mx-auto">China 2 days</span>
+      <span class="navbar-brand mb-0 h1 mx-auto">{{itineraries.0.title}}</span>
       <img src="images/more.png" data-toggle="modal" data-target="#topModal">
       <div class="modal fade" id="topModal" role="dialog">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-body">
             <form> <!--mode share notif edit delete-->
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                  <input type="radio" name="options" id="option1" autocomplete="off" checked> Edit
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="options" id="option2" autocomplete="off"> View
-                </label>
-              </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Share link</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" fill="https://travelpal.com/43409">
+                <label for="exampleInputEmail1">Share link code</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" fill="https://travelpal.com/43409" value="3333">
               </div>
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Notifications</label>
@@ -46,7 +38,7 @@
           
                 <button type="button" class="btn btn-outline-primary" onclick="window.location.href = 'planadd';">Edit Itinerary</button>
       
-              <button type="button" class="btn btn-outline-danger">Delete Itinerary</button>
+              <button type="button" class="btn btn-outline-danger" id="deleteButton">Delete Itinerary</button>
 
           </div>
           <div class="modal-footer">
@@ -54,46 +46,57 @@
             <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
           </div>
     </nav>
-    <div class="container-fluid ">
+
+
+    <div class="container-fluid">
       <div class="row dates">
-        <div class="col"><img src="images/larrow.png"></div>
-        <div class="col"><p>1/2</p></div>
-        <div class="col"><img src="images/rarrow.png"></div>
-      </div>
+        <img src="images/larrow.png" class="arrow"><p>{{itineraries.0.numdays}}</p><img src="images/rarrow.png" class="arrow"></div>
     </div>
     <div>
       <div class="row mx-auto">
         <div class="col-3">
-          <p>x am</p>
+          <span class="times">
+            <p>12 am</p>
+            <p>2 am</p>
+            <p>4 am</p>
+            <p>6 am</p>
+            <p>8 am</p>
+            <p>10 am</p>
+            <p>12 pm</p>
+            <p>2 pm</p>
+            <p>4 pm</p>
+            <p>6 pm</p>
+            <p>8 pm</p>
+            <p>10 pm</p>
+          </span>
+          
         </div>
-        <div class="col-9">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Check out
+        <div class="col-9 container">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="checkout" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Check out @ 7:00 AM
           </button>
           <div class="dropdown-menu container" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Shanghai ShangriLa
-              <button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">Edit</button>
+            <a class="dropdown-item" href="#">La Jolla Townhouse
+              <button type="button" class="btn btn-light float-right edit" data-toggle="modal" data-target="#myModal">Edit</button>
             </a>  
-            <a class="dropdown-item" href="#">Business meeting!</a>
-            <a class="dropdown-item" href="#">
-              <div class="dropdown-menu" aria-labelledby="dropdownComment">
-                <a class="dropdown-item" href="#">Location</a>
-                <a class="dropdown-item" href="#">Description</a>
-              </div>
-              <div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="exampleDropdownFormPassword2" placeholder="add comment">
-                  </div>
-                  <button type="submit" class="btn btn-primary">Comment</button>
-                </form>
+            <a class="dropdown-item" href="#">Meet downstairs</a>
+            <hr>
+            <span class="exampleComments">
+              <a class="dropdown-item" href="#">Henry: Too early!!</a>
+              <a class="dropdown-item" href="#">Christian: Too late!</a>
+            </span>
+              <form>
+                  <input class="form-control form-control-sm" type="text" id="commentAdd" placeholder="add comment">
+                  <button type="button" class="btn btn-primary commentButton">Comment</button>
+              </form>
+  
+                  
               </div>
             </a>
           </div>
         </div>
       </div>
     </div>
-    <div class="fixed-bottom">
-      <img src="images/add.png" class="float-right add" data-toggle="modal" data-target="#myModal">
-    </div>
+      <button type="button" class="btn addButton" data-toggle="modal" data-target="#myModal"><input type="image" src="images/add.png" width="50" height="50"></button>
     <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -106,11 +109,17 @@
             <div class="form-group">
               <label for="exampleFormControlSelect1">Time</label>
                 <select class="form-control" id="exampleFormControlSelect1">
-                  <option>x am</option>
-                  <option>x am</option>
-                  <option>x am</option>
-                  <option>x am</option>
-                  <option>x am</option>
+                  <option>12 am</option>
+                  <option>2 am</option>
+                  <option>4 am</option>
+                  <option>6 am</option>
+                  <option>8 am</option>
+                  <option>10 am</option>
+                  <option>12 pm</option>
+                  <option>2 pm</option>
+                  <option>12 pm</option>
+                  <option>12 pm</option>
+                  <option>12 pm</option>
                 </select>
             </div>
             <div class="form-group">

@@ -11,6 +11,8 @@ var login = require('./routes/login');
 var homepage = require('./routes/homepage');
 var planadd = require('./routes/planadd');
 var planz = require('./routes/planz');
+var planz2 = require('./routes/planz2');
+var homepage1 = require('./routes/homepage1');
 //var homepage = require('./routes/homepage(C)');
 //var planadd = require('./routes/planadd');
 //var login = require('./routes/login')
@@ -39,9 +41,27 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/planz', function(req, res){
-	res.render('planz')
+app.use(express.bodyParser());
+app.post('/planz2', function(request, response) {
+  var fs = require('fs'); 			// Node module to write to file
+
+  var fileName = './data.json';  		// Path to your json on disk
+  var data = require(fileName); 		// Read contents of your old json
+
+  // Assume that data.events is an array containing your previous events
+  // new Event is the current event entered by the user in the form.
+	// Push the new event to the array.
+
+  newIt = {"title": request.body.itineraries.title, "numdays" : request.body.itineraries.numdays};
+  data.itineraries.push(newIt);
+
+  fs.writeFileSync(fileName, JSON.stringify(data)); // Update the json file on disk
+  // Done !
 });
+
+app.get('/planz', planz.view);
+
+app.get('/planz2', planz2.view);
 
 app.get('/', function(req, res){
 	res.render('login');
@@ -52,6 +72,7 @@ app.get('/planadd', function(req, res){
 	res.render('planadd')
 });
 
+app.get('/homepage1', homepage1.view);
 //app.get('/', planadd.view);
 
 // Example route
