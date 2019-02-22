@@ -46,6 +46,6 @@ $('.commentButton').click(function() {
 });
 
 $('#deleteButton').click(function() {
-	window.location.href = 'homepage1';
+	window.location.href = 'homepage2';
 });
 

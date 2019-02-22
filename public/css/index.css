@@ -52,6 +52,11 @@
 	margin-top: 65%;
 }
 
+#newEvent {
+	position: relative;
+	margin-top: 70%;
+}
+
 .addButton {
 right: 0;
 bottom: 0;
