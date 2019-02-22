@@ -1,11 +1,12 @@
-var commentString = $('#commentForm').serialize();
-var text = $('#myComment').find('input[name="myComment"]').val();
-var commentAdd = $('#myModal #commentAdd').val()
+$(document).ready(function () {
+	var commentAdd = $('#commentAdd').val();
+});
+
 
 
 function addComment() { 
 	console.log(commentAdd);
-	$('.exampleComments').append('<a class="dropdown-item" href="#">'+ commentAdd +'</a>');
+	$('.exampleComments').append('<a class="dropdown-item" href="#">Henry: '+ commentAdd +'</a>');
 }
 
 $('.loginButton').click(function (req, res) {
@@ -29,5 +30,5 @@ $('.commentButton').click(function() {
 
 $('#deleteButton').click(function() {
 	window.location.href = 'homepage1';
-})
+});
 
