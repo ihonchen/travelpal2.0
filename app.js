@@ -13,6 +13,7 @@ var planadd = require('./routes/planadd');
 var planz = require('./routes/planz');
 var planz2 = require('./routes/planz2');
 var homepage1 = require('./routes/homepage1');
+var homepage2 = require('./routes/homepage2');
 //var homepage = require('./routes/homepage(C)');
 //var planadd = require('./routes/planadd');
 //var login = require('./routes/login')
@@ -73,6 +74,7 @@ app.get('/planadd', function(req, res){
 });
 
 app.get('/homepage1', homepage1.view);
+app.get('/homepage2', homepage2.view);
 //app.get('/', planadd.view);
 
 // Example route

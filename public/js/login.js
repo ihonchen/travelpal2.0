@@ -1,13 +1,12 @@
 $(document).ready(function () {
-	var commentAdd = $('#commentAdd').val();
 });
 
 
 
 function addComment() { 
-	console.log(commentAdd);
-	$('.exampleComments').append('<a class="dropdown-item" href="#">Henry: '+ commentAdd +'</a>');
-}
+	var commentAdded = document.getElementById('commentAdd').value;
+	$('.exampleComments').append('<a class="dropdown-item" href="#">Henry: '+commentAdded+'</a>');
+};
 
 $('.loginButton').click(function (req, res) {
 	var homepage = require('./routes/homepage');
