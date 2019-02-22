@@ -23,8 +23,8 @@
 	  			<div class="modal-content">
 
 	  				<!-- settings close button -->
-					<div class="modal-header">	
-							<h3>Settings</h3>
+					<div class="modal-header ">	
+							<h4 class="modalText">Settings</h4>
 		  					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 
@@ -69,6 +69,7 @@
 
 	  				<!-- close button-->
 					<div class="modal-header">
+						<h4 class="modalText">New Itinerary</h4>
 		  				<button type="button" class="close" data-dismiss="modal">&times;</button>
 		  			</div>
 
@@ -97,6 +98,14 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     	<script src="js/login.js" ="text/javascript"></script>
+    	<script type="text/javascript">
+	    var alerted = localStorage.getItem('alerted') || '';
+	    if (alerted != 'yes') {
+	     alert("Welcome to Travelpal. This is an itinerary building and sharing app. You can either create a new itinerary or join an existing one with a provided four digit code. Below is a list of existing itineraries. You can use the blue add button to create a new itinerary");
+	     localStorage.setItem('alerted','yes');
+	    }
+		</script>
+    	
 	</div>
   </body>
 </html>
