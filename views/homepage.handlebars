@@ -14,6 +14,7 @@
   <!-- beginning of homepage code -->
   <body>
   	<div>
+  		<div id="popup">
   		<nav class="navbar navbar-light bg-light">
   	  <img src="images/tt.png">
       <span class="navbar-brand mb-0 h1 mx-auto">Your Itineraries</span>
@@ -32,7 +33,7 @@
 					<!-- settings buttons -->
 					<div class="modal-body">
 						<center>
-							<input type="button" value="Help" class="btn btn-primary" onclick="alert('Here are the following features of the TravelPal webapp: you may either create a new itinerary or open an existing one as you travel.')"></input>
+							<input type="button" value="Help" class="btn btn-primary" onclick="alert('Welcome to Travelpal. This is an itinerary building and sharing app. You can either create a new itinerary or join an existing one with a provided four digit code. Below is a list of existing itineraries. You can use the blue add button to create a new itinerary')"></input>
 		  					<br>
 		  					<br>
 		  
@@ -45,7 +46,7 @@
     </nav>
   	</div>
   	<!-- list of itineraries -->
-	<div>
+	<div class="mainDiv">
 		<ul class="list-group">	  		
 			{{#each itineraries}}
 	 			<li class="list-group-item" onclick="window.location.href = 'planz';">
@@ -99,11 +100,14 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     	<script src="js/login.js" ="text/javascript"></script>
     	<script type="text/javascript">
-	    var alerted = localStorage.getItem('alerted') || '';
-	    if (alerted != 'yes') {
-	     alert("Welcome to Travelpal. This is an itinerary building and sharing app. You can either create a new itinerary or join an existing one with a provided four digit code. Below is a list of existing itineraries. You can use the blue add button to create a new itinerary");
-	     localStorage.setItem('alerted','yes');
-	    }
+
+    		$(document).ready(function() {
+			    var isshow = localStorage.getItem('isshow');
+			    if (isshow == null) {
+			        localStorage.setItem('isshow', 1);
+			        $(".mainDiv").prepend('<div class="alert alert-info alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Welcome to Travel Pal!</strong><br>This is an itinerary building and sharing app. You can either create a new itinerary or join an existing one with a provided four digit code. Below is a list of existing itineraries. You can use the blue add button to create a new itinerary</div>');
+			    };
+			});
 		</script>
     	
 	</div>

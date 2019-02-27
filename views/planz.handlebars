@@ -46,7 +46,7 @@
     </nav>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid exampleDiv">
       <div class="row dates">
         <img src="images/larrow.png" class="arrow"><p>{{itineraries.0.numdays}}</p><img src="images/rarrow.png" class="arrow"></div>
     </div>
@@ -133,11 +133,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="js/login.js" ="text/javascript"></script>
     <script type="text/javascript">
-      var alertedd = localStorage.getItem('alertedd') || '';
-      if (alertedd != 'yes') {
-       alert("Welcome to the detailed example.  You can find the link code and more options in the Options Icon in the top right. Click on existing Events to comment and for more descriptions. To add a new event, click the blue add button");
-       localStorage.setItem('alertedd','yes');
-      }
+      $(document).ready(function() {
+          var issshow = localStorage.getItem('issshow');
+          if (issshow == null) {
+              localStorage.setItem('issshow', 1);
+              $(".exampleDiv").prepend('<div class="eAlert alert alert-info alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Welcome to the detailed example!</strong><br>You can find the link code and more options in the Options Icon in the top right. Click on existing Events to comment and for more descriptions. To add a new event, click the blue add button!</div>');
+          };
+      });
     </script>
     
   </body>

@@ -1,3 +1,23 @@
+.alert{
+	position: absolute;
+	z-index: 100;
+	top: 30%;
+	width: 330px;
+	top: 50%;
+  	left:50%;
+  	transform: translate(-50%,-50%);
+}
+
+.eAlert{
+
+	position: absolute;
+	z-index: 100;
+	top: 0%;
+	width: 330px;
+	top: 30%;
+  	left:50%;
+  	transform: translate(-50%,-50%);
+}
 .dates {
 	position: absolute;
 	left: 50%;
