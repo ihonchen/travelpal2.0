@@ -8,6 +8,10 @@
   	transform: translate(-50%,-50%);
 }
 
+.settings {
+	position: relative;
+
+}
 .myItineraries {
 	padding-top: 20px;
 	padding-right: 20px;
@@ -43,6 +47,11 @@
 .drop3 {
 	width: 10%;
 	height: auto;
+}
+
+.homeTitle {
+float: none;
+    margin: 0 auto;
 }
 
 .login {
@@ -91,8 +100,8 @@
 }
 
 .addButton {
-right: 0;
-bottom: 0;
+right: 10%;
+bottom: 10%;
 position: absolute;
 }
 
