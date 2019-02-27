@@ -46,17 +46,17 @@
     </nav>
   	</div>
   	<!-- list of itineraries -->
-	<div class="mainDiv">
-		<ul class="list-group">	  		
-			{{#each itineraries}}
-	 			<li class="list-group-item" onclick="window.location.href = 'planz';">
-	  				<ul class="itineraries">
-      					<p style="text-align: left;">{{title}}</p>
-   	 					<p style="text-align: right;">{{numdays}} day(s)</p>
-   	 				</ul>   	  
-    	  		</li>		
-    	  	{{/each}}
-		</ul>
+	<div class="mainDiv container">
+		<div class="row">
+				{{#each itineraries}}
+					<div class="col-6 myItineraries">
+	 					<div class="list-group-item"  onclick="window.location.href = 'planz';">
+      						<p style="text-align: left;">{{title}}</p>
+   	 						<p style="text-align: right;">{{numdays}} day(s)</p>  	  
+    	  				</div>
+    	  			</div>
+    	  		{{/each}}	
+		</div>
 	</div>
 	
 		<!-- add itinerary button-->

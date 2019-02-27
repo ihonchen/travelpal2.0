@@ -9,10 +9,7 @@ function addEvent() {
 	$('.toAdd').append('<span><button class="btn btn-secondary dropdown-toggle" type="button" id="newEvent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' + eventAdded + ' @ ' + timeAdded + '</button><div class="dropdown-menu container" aria-labelledby="dropdownMenuButton2"> <a class="dropdown-item" href="#">' + placeAdded + '<button type="button" class="btn btn-light float-right edit" data-toggle="modal" data-target="#myModal">Edit</button></a><a class="dropdown-item" href="#">' + detailAdded + '</a><hr><form id="commentForm"><input class="form-control form-control-sm" type="textarea" id="commentAdd" placeholder="add comment" name="commentPlz"><button type="button" class="btn btn-primary commentButton">Comment</button></form></span>'
           
 		);
-	$('')
 }
-
-
 
 
 function addComment() { 
