@@ -1,3 +1,4 @@
+    
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,20 +16,16 @@
   <body>
   	<div>
   		<nav class="navbar navbar-light bg-light">
-  		<div class="container">
-  	 	<span class="navbar-brand mb-0 h1 mx-auto homeTitle">Your Itineraries</span>
-  	 	<button type="button" class="btn settings" data-toggle="modal" data-target="#myModal"><input type="image" src="https://www.shareicon.net/data/2015/08/19/87756_gear_512x512.png" width="16" height="16" alt="settings"></button>
-  	 </nav>
-  	 </div>
-  		 </div>
-
+  	  <img src="images/tt.png">
+      <span class="navbar-brand mb-0 h1 mx-auto">Your Itineraries</span>
+      <button type="button" class="btn settings" data-toggle="modal" data-target="#myModal"><input type="image" src="https://www.shareicon.net/data/2015/08/19/87756_gear_512x512.png" width="16" height="16" alt="settings"></button>
 		<div class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">
 	  			<div class="modal-content">
 
 	  				<!-- settings close button -->
-					<div class="modal-header ">	
-							<h4 class="modalText">Settings</h4>
+					<div class="modal-header">	
+							<h3>Settings</h3>
 		  					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 
@@ -36,7 +33,7 @@
 					<!-- settings buttons -->
 					<div class="modal-body">
 						<center>
-							<input type="button" value="Help" class="btn btn-primary" onclick="alert('Welcome to Travelpal. This is an itinerary building and sharing app. You can either create a new itinerary or join an existing one with a provided four digit code. Below is a list of existing itineraries. You can use the blue add button to create a new itinerary')"></input>
+							<input type="button" value="Help" class="btn btn-primary" onclick="alert('Here are the following features of the TravelPal webapp: you may either create a new itinerary or open an existing one as you travel.')"></input>
 		  					<br>
 		  					<br>
 		  
@@ -49,22 +46,21 @@
     </nav>
   	</div>
   	<!-- list of itineraries -->
-	<div class="mainDiv container">
-		<div class="row">
-				{{#each itineraries}}
-					<div class="col-6 myItineraries">
-	 					<div class="list-group-item blueBox"  onclick="window.location.href = 'planz';">
-      						<p style="text-align: left;">{{title}}</p>
-   	 						<p style="text-align: right;">{{numdays}} day(s)</p>  	  
-    	  				</div>
-    	  			</div>
-    	  		{{/each}}	
-		</div>
+	<div>
+		<ul class="list-group">	  		
+	 			<li class="list-group-item" onclick="window.location.href = 'planz';">
+	  				<ul class="itineraries">
+      					<p style="text-align: left;">EXAMPLE ITINERARY</p>
+   	 					<p style="text-align: right;">1 day(s)</p>
+   	 				</ul>   	  
+    	  		</li>		
+
+		</ul>
 	</div>
 	
 		<!-- add itinerary button-->
 		
-			<button type="button" class="btn btn-primary addButton" data-toggle="modal" data-target="#myModal2">Add itinerary</button>
+			<button type="button" class="btn addButton" data-toggle="modal" data-target="#myModal2"><input type="image" src="images/add.png" width="50" height="50"></button>
 		
 		
 		<div class="modal fade" id="myModal2" role="dialog">
@@ -73,7 +69,6 @@
 
 	  				<!-- close button-->
 					<div class="modal-header">
-						<h4 class="modalText">New Itinerary</h4>
 		  				<button type="button" class="close" data-dismiss="modal">&times;</button>
 		  			</div>
 
@@ -97,22 +92,12 @@
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     	<script src="js/login.js" ="text/javascript"></script>
-    	<script type="text/javascript">
 
-    		$(document).ready(function() {
-			    var isshow = localStorage.getItem('isshow');
-			    if (isshow == null) {
-			        localStorage.setItem('isshow', 1);
-			        $(".mainDiv").prepend('<div class="alert alert-info alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Welcome to Travel Pal!</strong><br>This is an itinerary building and sharing app. You can either create a new itinerary or join an existing one with a provided four digit code. Below is a list of existing itineraries. You can use the blue add button to create a new itinerary</div>');
-			    };
-			});
-		</script>
-    	
 	</div>
   </body>
 </html>
+
