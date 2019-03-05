@@ -16,7 +16,15 @@ function initializePage() {
 	$('.likeBtn').click(function() {
 ga('create', 'UA-135647985-1', 'auto');
 ga("send", "event", 'like', 'click') });
-	
+};
+
+function aB() {
+	var num = Math.floor(Math.random() * 10 + 1);
+	if (num > 5.5) {
+		window.location.href = 'homepage_A'
+	} else {
+		window.location.href = 'homepage_B'
+	};
 };
 
 function addComment() { 
