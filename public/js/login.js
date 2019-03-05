@@ -16,10 +16,7 @@ function initializePage() {
 	$('.likeBtn').click(function() {
 ga('create', 'UA-135647985-1', 'auto');
 ga("send", "event", 'like', 'click') });
-	$('.likeBtn2').click(function() {
-	ga('create', 'UA-135647985-1', 'auto');
-	ga("send", "event", 'likeB', 'click');
-	});
+	
 };
 
 function addComment() { 
