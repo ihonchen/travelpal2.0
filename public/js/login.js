@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	initializePage();
 });
 
 function addEvent() {
@@ -11,6 +12,15 @@ function addEvent() {
 		);
 }
 
+function initializePage() {
+	$('.likeBtn').click(function() {
+ga('create', 'UA-135647985-1', 'auto');
+ga("send", "event", 'like', 'click') });
+	$('.likeBtn2').click(function() {
+	ga('create', 'UA-135647985-1', 'auto');
+	ga("send", "event", 'likeB', 'click');
+	});
+};
 
 function addComment() { 
 	var commentAdded = document.getElementById('commentAdd').value;
@@ -45,4 +55,3 @@ $('.commentButton').click(function() {
 $('#deleteButton').click(function() {
 	window.location.href = 'homepage2';
 });
-
