@@ -33,12 +33,7 @@ function addComment() {
 	event.preventDefault();
 };
 
-$('.loginButton').click(function (req, res) {
-	var homepage = require('./routes/homepage');
-	app.get('/homepage', function(req, res){
-	res.render('homepage');
-});
-});
+
 
 
 $('.Create').click(function (req, res) {
